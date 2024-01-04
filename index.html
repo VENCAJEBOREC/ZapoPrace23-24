@@ -9,7 +9,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
 </head>
 <body>
+    
+    <div class="Container">
 
+        <div class="header">
+            <!-- Nadpis stránky -->
+            <h1>Poznámky</h1>
+        </div>
+
+        <!-- Formulář pro přidání nové poznámky -->
+        <div id="formContainer">
+            <input type="text" id="noteInput" placeholder="Napiš poznámku">
+            <input type="date" id="dueDate" placeholder="Datum splnění">
+            <input type="color" id="colorPicker" value="#243b55" style="width: 35px; height: 35px;">
+            <input type="checkbox" id="hasExclamation"> <label for="hasExclamation" style="color: white"><i class="fas fa-exclamation"></i></label>
+            <button id="addNoteButton">Přidat poznámku</button>
+        </div>
+
+        <!-- Seznam poznámek -->
+        <ul id="noteList"></ul>
+
+        <!-- Formulář pro úpravu existující poznámky -->
+        <div id="editformContainer">
+            <input type="text" id="editNoteInput" placeholder="Nový text poznámky" style="display: none">
+            <input type="date" id="editDueDate" placeholder="Nové datum splnění" style="display: none">
+            <input type="color" id="editColorPicker" value="#243b55" style="width: 35px; height: 35px; display: none;">
+
+            <!-- Kontejner pro checkbox a popisek pro důležitost poznámky při úpravě -->
+            <div id="editHasExclamationContainer"style="display: none;">
+                <input type="checkbox" id="editHasExclamation"> <label for="editHasExclamation" style="color: white"><i class="fas fa-exclamation"></i></label>
+            </div>
+
+            <!-- Tlačítka pro potvrzení úpravy nebo zrušení úpravy -->
+            <button id="editNoteButton" style="display: none"><i class="fas fa-check"></i></button>
+            <button id="cancelEditButton" style="display: none"><i class="fas fa-times"></i></button>
+        </div>
+
+    </div>
+    
     <!-- Skripty pro funkcionalitu -->
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <title>Uspěšné odhlášení</title>
+  <meta charset="UTF-8">
+
+  <!-- Připojení externího stylového souboru -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Nadpis stránky -->
+    <h1>Uspěšné odhlášení</h1>
+
+    <!-- Oznámení o úspěšném odhlášení -->
+    <p style="color: white; font-size: 20px">Byli jste úspěšně odhlášeni.</p>
+    <p style="color: white; font-size: 20px">Pro opětovné přihlášení klikněte na následující tlačítko:</p>
+
+    <!-- Tlačítko pro opětovné přihlášení s odkazem na funkci v objektu UserManager -->
+    <button id="loginButton" onclick="userManager.redirectToLogin()">Přihlásit se znovu</button>
+
+
+  <!-- Skript pro funkcionalitu spojenou s odhlášením -->
+  <script src="logout.js"></script>
+</body>
+</html>

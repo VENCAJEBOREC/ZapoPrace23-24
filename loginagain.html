@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Neúspěšné přihlášení</title>
+    <meta charset="UTF-8">
+
+    <!-- Připojení externího stylového souboru -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Nadpis stránky -->
+<h1>Neúspěšné přihlášení</h1>
+
+<!-- Oznámení o neúspěšném přihlášení -->
+<p style="color: white; font-size: 20px">Nebyli jste přihlášeni pro opakované zadání špatného hesla!</p>
+<p style="color: white; font-size: 20px">Zkuste to prosím znovu!</p>
+
+<!-- Tlačítko pro opětovné přihlášení s odkazem na funkci v objektu UserManager -->
+<button id="loginButton" onclick="userManager.redirectToLogin()">Přihlásit se znovu</button>
+
+
+<!-- Skript pro funkcionalitu spojenou s odhlášením -->
+<script src="logout.js"></script>
+</body>
+</html>

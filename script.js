@@ -12,17 +12,17 @@ class NoteManager {
 
     // Metoda pro kontrolu hesla
     checkPassword() {
-        const userPassword = this.getCookie("userPassword");
+        const userKey = this.getCookie("userKey");
 
-        // Pokud uživatel nemá heslo, přesměruje ho na stránku pro vytvoření hesla
-        if (!userPassword) {
+        // Pokud uživatel nemá klíč, přesměruje ho na stránku pro vytvoření hesla
+        if (!userKey) {
             window.location.href = "createPassword.html";
         } else {
-            // Uživatel má heslo, zeptat se ho
-            const enteredPassword = prompt("Zadejte heslo:");
+            // Uživatel má klíč, zeptat se ho
+            const enteredPassword = prompt("Zadejte klíč:");
 
-            if (enteredPassword !== userPassword) {
-                alert("Nesprávné heslo!");
+            if (enteredPassword !== userKey) {
+                alert("Nesprávný klíč!");
                 window.location.href = "loginagain.html";
             }
         }
@@ -127,6 +127,20 @@ class NoteManager {
         document.getElementById("editHasExclamationContainer").style.display = "block";
         document.getElementById("editNoteButton").style.display = "block";
         document.getElementById("cancelEditButton").style.display = "block";
+
+        // Při zobrazení polí pro úpravu, zkontrolujte, zda existuje vybraná poznámka
+        if (this.selectedNoteText) {
+            // Získání existujících poznámek
+            const existingNotes = this.getExistingNotes();
+
+            // Najděte vybranou poznámku
+            const selectedNote = existingNotes.find((note) => note.text === this.selectedNoteText);
+
+            // Pokud byla poznámka nalezena a má platné datum splnění, vyplňte pole pro datum splnění
+            if (selectedNote && selectedNote.dueDate) {
+                this.editDueDate.valueAsDate = new Date(selectedNote.dueDate);
+            }
+        }
     }
 
     // Metoda pro odstranění poznámky
